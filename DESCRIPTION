@@ -1,0 +1,18 @@
+Package: collaborateR
+Type: Package
+Title: Build Collaboration Graph Using Version Control System Logs
+Version: 0.1.0
+Authors@R: c(person("Leen","Jooken", email = "leen.jooken@uhasselt.be", role = c("aut","cre")),
+             person("Gert","Janssenswillen", email = "gert.janssenswillen@uhasselt.be", role = c("ctb")))
+Description: Build Collaboration Graph Using Version Control System Logs.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    knitr,
+    rmarkdown
+Imports: R6, dplyr, igraph, lubridate, purrr, stringr, tidyr, xesreadR, rlang
+VignetteBuilder: knitr
+RoxygenNote: 7.1.0.9000
+Depends: 
+    R (>= 2.10)

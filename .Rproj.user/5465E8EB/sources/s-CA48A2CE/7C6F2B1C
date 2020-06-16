@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1592322425356.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "7C6F2B1C",
+    "lastKnownWriteTime" : 1592333102,
+    "last_content_update" : 1592333102274,
+    "path" : "~/UH - Local/R workspace/collaborateR/R/visualization.R",
+    "project_path" : "R/visualization.R",
+    "properties" : {
+        "cursorPosition" : "18,27",
+        "scrollLine" : "8"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

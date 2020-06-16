@@ -1,0 +1,27 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1592322652496.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "4B88B46C",
+    "lastKnownWriteTime" : 1592335674,
+    "last_content_update" : 1592335674193,
+    "path" : "~/UH - Local/R workspace/collaborateR/vignettes/introduction.Rmd",
+    "project_path" : "vignettes/introduction.Rmd",
+    "properties" : {
+        "cursorPosition" : "21,0",
+        "last_setup_crc32" : "",
+        "scrollLine" : "2",
+        "source_window_id" : ""
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 12,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

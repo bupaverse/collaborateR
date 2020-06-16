@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1592322424231.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3046258604",
+    "id" : "1CC8F382",
+    "lastKnownWriteTime" : 1592329278,
+    "last_content_update" : 1592329278710,
+    "path" : "~/UH - Local/R workspace/collaborateR/R/output.R",
+    "project_path" : "R/output.R",
+    "properties" : {
+        "cursorPosition" : "15,20",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

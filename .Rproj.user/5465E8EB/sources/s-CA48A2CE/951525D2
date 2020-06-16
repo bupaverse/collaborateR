@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1592322367860.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "951525D2",
+    "lastKnownWriteTime" : 1592327826,
+    "last_content_update" : 1592327826296,
+    "path" : "~/UH - Local/R workspace/collaborateR/R/log.R",
+    "project_path" : "R/log.R",
+    "properties" : {
+        "cursorPosition" : "8,60",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

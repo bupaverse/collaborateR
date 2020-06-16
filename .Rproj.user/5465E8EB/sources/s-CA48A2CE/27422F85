@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1592326909771.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "27422F85",
+    "lastKnownWriteTime" : 1592329718,
+    "last_content_update" : 1592329718528,
+    "path" : "~/UH - Local/R workspace/collaborateR/R/graph.R",
+    "project_path" : "R/graph.R",
+    "properties" : {
+        "cursorPosition" : "20,23",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 14,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1592322407837.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1276085053",
+    "id" : "B05AF223",
+    "lastKnownWriteTime" : 1592333218,
+    "last_content_update" : 1592333218192,
+    "path" : "~/UH - Local/R workspace/collaborateR/R/nodeWeightCalculator.R",
+    "project_path" : "R/nodeWeightCalculator.R",
+    "properties" : {
+        "cursorPosition" : "3,38",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

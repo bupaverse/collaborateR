@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1592335773789.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3568739850",
+    "id" : "4406ED5E",
+    "lastKnownWriteTime" : 1592335786,
+    "last_content_update" : 1592335786266,
+    "path" : "~/UH - Local/R workspace/collaborateR/R/.gitignore",
+    "project_path" : "R/.gitignore",
+    "properties" : {
+        "cursorPosition" : "26,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 16,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "gitignore"
+}

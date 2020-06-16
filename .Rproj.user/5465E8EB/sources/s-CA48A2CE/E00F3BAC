@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1592322403007.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "E00F3BAC",
+    "lastKnownWriteTime" : 1592257223,
+    "last_content_update" : 1592257223,
+    "path" : "~/UH - Local/R workspace/collaborateR/R/helpfunctions.R",
+    "project_path" : "R/helpfunctions.R",
+    "properties" : {
+        "cursorPosition" : "28,0",
+        "scrollLine" : "10"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

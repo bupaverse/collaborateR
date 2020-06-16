@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1592327659976.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3134635264",
+    "id" : "E63777BE",
+    "lastKnownWriteTime" : 1592329405,
+    "last_content_update" : 1592329405453,
+    "path" : "~/UH - Local/R workspace/collaborateR/R/visualizeGraph.R",
+    "project_path" : "R/visualizeGraph.R",
+    "properties" : {
+        "cursorPosition" : "7,28",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 15,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

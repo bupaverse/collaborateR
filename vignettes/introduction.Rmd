@@ -1,0 +1,36 @@
+---
+title: "Introduction to collaborateR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to collaborateR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(collaborateR)
+```
+
+```{r, fig.width=6, fig.height=6}
+data("vcs_log")
+
+#build the graph 
+g <- build_graph(vcs_log, useFileImportance = TRUE, AgVP = 0.45, AgCP = 0.25, AbVP = 0.1, AbCP = 0.4)
+
+#write graph to csv
+write_graph_to_csv(g, anonymization = TRUE)
+
+#create an igraph object
+igraph <- create_igraph_object(g)
+
+#visualize graph 
+visualize_graph(g,anonymize = TRUE)
+```
+

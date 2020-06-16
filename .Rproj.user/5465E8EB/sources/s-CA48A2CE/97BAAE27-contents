@@ -1,0 +1,51 @@
+---
+title: "Introduction to collaborateR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to collaborateR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(collaborateR)
+```
+
+```{r}
+#main script 
+#!!! Aleen deze functies moeten veschikbaar zijn voor de einduser, de rest werkt intern
+
+filePath = "Data/eventLog_volledigelog.xes"
+#read the log
+log <- read_vcs_eventlog(filePath)
+
+#build the graph 
+g <- build_graph(log, useFileImportance = TRUE, AgVP = 0.45, AgCP = 0.25, AbVP = 0.1, AbCP = 0.4)
+g$nodes
+g$edges
+
+
+#write graph to csv
+writeGraphToCSV(g, anonymization = TRUE)
+
+#create an igraph object
+igraph <- createIGraphObject(g)
+
+#visualize graph 
+visualizeGraph(g,anonymize = TRUE)
+
+
+
+
+g <- build_graph(log)
+g <- build_graph(log, AgVP = 0.35, AgCP = 0.35, AbVP = 0.25, AbCP = 0.4)
+
+```
+
