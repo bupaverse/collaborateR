@@ -6,6 +6,8 @@
 #undirected
 #collabtype
 getBaseGraphEdges <- function(log){
+    collabType.x <- collabType.y <- NULL
+
   pairProgEdges <- getPairProgrammingEdges(log)
   disjunctEdges <- getDisjunctCollaborationEdges(log)
 
@@ -47,6 +49,8 @@ getPairProgrammingEdges <- function(log){
 }
 
 getDisjunctCollaborationEdges <- function(log){
+    fileId <- programmerID.x <- programmerID.y <- duplicateTest <- grp <- NULL
+
  #for each pair of programmers -> collect their commits
   # Compare the commits (if they are NOT BOTH pair programming commits involving these programmers)
   #If the 2 commits have 1 file in common --> add to the list

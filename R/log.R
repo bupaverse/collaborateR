@@ -27,6 +27,8 @@
 #' @export
 #'
 read_vcs_eventlog <- function(filePath){
+    CASE_concept_name <- event <- modifierStatus <- resource_id <- revision <- timestamp <- NULL
+
   #read log
   log <- read_xes(filePath)
   #cast to dataframe
@@ -43,6 +45,8 @@ read_vcs_eventlog <- function(filePath){
 #@returns a dataframe with commitID, programmerID.X and programmerID.y
 #of programmers that worked together (=did pair programming) on that commit
 getPairProgrammingCommits <- function(log){
+    commitID <- programmerID <- programmerID.x <- programmerID.y <- NULL
+
 #For every commit the pairs of programmers that contributed to it
 commitProgrammerPairs <- log %>% select(commitID, programmerID) %>% unique()
 
@@ -56,6 +60,8 @@ edges
 #Attention! Pairs are mentioned TWICE!
 #Example 308  1   310   an 310   1   308
 getCommitsWithFilesInCommon <- function(log){
+    commitID <- fileId <- commitID.x <- commitID.y <- NULL
+
   #List of commit pairs that have files in common
   commitFilePairs <- log %>% select(commitID, fileId) %>% unique()
   #filter != and not < cause we dont know the way the tuples will be ordered later on
@@ -69,6 +75,8 @@ getCommitsWithFilesInCommon <- function(log){
 #@returns dataframe programmerID.x, commitID.x, programmerID.y, commitID.y
 #Meaning programmer x worked on commit x, y on commit y
 getCarthesisProductProgrCommitPairs <- function(log){
+    programmerID <- commitID <- programmerID.x <- programmerID.y <- commitID.x <- commitID.y <- NULL
+
   programmerCommitPairs <- log %>% select(programmerID, commitID) %>% unique()
   programmerCommitPairs <- merge(programmerCommitPairs, programmerCommitPairs, by = NULL, all = TRUE) %>% filter(programmerID.x < programmerID.y) %>%
     filter(commitID.x != commitID.y)
@@ -80,6 +88,8 @@ getCarthesisProductProgrCommitPairs <- function(log){
 #Function to get the carthesic product of programmer commit pairs, but with the condition that the programmers in question did not do pair programming on both the commits mentioned
 #@returns dataframe programmerID.x, commitID.x, programmerID.y, commitID.y
 getCPProgrCommitPairsNotTwicePairprogr <- function(log){
+    programmerID.x <- programmerID.y <- commitID.x <- commitID.y <- duplicateTest <- NULL
+
   programmerCommitPairs <- getCarthesisProductProgrCommitPairs(log)
 
   #remove the combinations where for the programmer pair the 2 selected commits are both pair programming commits
@@ -94,5 +104,7 @@ getCPProgrCommitPairsNotTwicePairprogr <- function(log){
 
 #@returns dataframe with commitID and timestamp
 getCommitTimestamps <- function(log){
+    commitID <- timestamp <- NULL
+
   log %>% select(commitID, timestamp) %>% unique()
 }

@@ -1,6 +1,6 @@
 #' @title Function to visualize the graph
 #'
-#'  Uses igraph's plot to plot the graph
+#' @description Uses igraph's plot to plot the graph
 #'
 #' @param graph the graph object to visualize
 #' @param anonymize whether or not to anonymize node names

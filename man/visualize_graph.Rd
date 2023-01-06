@@ -2,9 +2,7 @@
 % Please edit documentation in R/visualizeGraph.R
 \name{visualize_graph}
 \alias{visualize_graph}
-\title{Function to visualize the graph
-
- Uses igraph's plot to plot the graph}
+\title{Function to visualize the graph}
 \usage{
 visualize_graph(
   graph,
@@ -26,7 +24,5 @@ visualize_graph(
 Visualized graph
 }
 \description{
-Function to visualize the graph
-
- Uses igraph's plot to plot the graph
+Uses igraph's plot to plot the graph
 }

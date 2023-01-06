@@ -10,6 +10,9 @@
 #' @import xesreadR
 #' @import stringr
 #' @importFrom lubridate floor_date
+#' @importFrom data.table :=
+#' @importFrom utils write.csv
+#' @importFrom stats setNames
 
 globalVariables(c("."))
 "_PACKAGE"

@@ -47,6 +47,8 @@ simplifyGraph <- function(log, nodes, edges, simplificationCutoffParam, AgVP, Ag
 
 #Function that makes sure all the colums are the right datatype
 resetDataTypes <- function(vizNodes,vizEdges){
+    programmerName <- type <- collabType <- NULL
+
   vizNodes <- vizNodes %>% mutate(programmerName = as.factor(programmerName))
   vizEdges <- vizEdges %>% mutate(type = as.factor(type), collabType = factor(collabType,ordered = TRUE, levels = c("disjunct programming","pair programming","pair and disjunct programming")))
 
@@ -102,6 +104,8 @@ calculateAbstractionCorrelationParam <- function(nodes, edges){
 #@param simplificationCutoffParam : for a node: edges whose normalized weight (normalized locally using the weights of the other incident edges) is < this param will be candidates for removal
 #@returns edges dataframe with the edges where both nodes agree on removal are removed from
 edgeFiltering <- function(nodes,edges, simplificationCutoffParam){
+    sourceNodeID <- targetNodeID <- weight <- programmerID <- normWeight <-
+
   #Collect all edges
   edges %>% select(sourceNodeID,targetNodeID, weight)-> chronologicEdges
   #I want every edge mentioned 2 (undirected so in both directions)
@@ -160,6 +164,7 @@ aggregation <- function(nodes, edges,AgVP, AgCP){
 #@param AgCP: aggregation correlation parameter
 #@returns clusters: dataframe with programmerID, clusterID en aggregationEdgeID, that gives a first notion of groups/clusters of different nodes (when they have the same clusterID)
 initialClusterBuilding <- function(nodes, edges,AgVP, AgCP){
+    weight <- programmerID <- edgeWeight <- nodeWeight <- distSign <- NULL
 
   #find the candidate nodes
   nodes %>% filter(weight < AgVP) -> candidateNodes
@@ -190,6 +195,8 @@ initialClusterBuilding <- function(nodes, edges,AgVP, AgCP){
 #Function that transforms the undirected edges dataframe to a directed on
 #every edge is mentioned twice
 transformToDirectedEdges <- function(edges){
+    sourceNodeID <- targetNodeID <- weight <- NULL
+
   #Collect all edges
   edges %>% select(sourceNodeID,targetNodeID, weight)-> chronologicEdges
   #I want every edge mentioned 2 (undirected so in both directions)
@@ -464,6 +471,10 @@ handleOutClusterEdges <- function(vizEdges, edges,vizClusterNodesToClusterIDs){
 #@param vizClusterNodesToClusterIDs link between clusterID and the node ID of the cluster in the visualization
 #@return ataframe with the edges as how they appear in the ending visualization
 handleOutClusterEdgesInterCluster <- function(vizEdges,edges,vizClusterNodesToClusterIDs){
+    clusterID.sourceNode <- clusterID.targetNode <- label <- clusterNodeWeight <- duplicateTest <-
+        grp <- sourceNodeID <- targetNodeID <- type <- NULL
+
+
   #Get the edges that run between 2 clusters, those clusters must have different clusterIDS
   edges %>% filter((!is.na(clusterID.sourceNode)&(!is.na(clusterID.targetNode)))&(clusterID.sourceNode != clusterID.targetNode)) -> edgesBetweenClusters
 
@@ -559,6 +570,8 @@ determineCollabTypeInterClusterEdge <- function(directedEdgesBetweenClusters,viz
 #@param vizInterClusterEdges dataframe of the intercluster edges that will appear in the ending visualization
 #@return dataframe of the inter cluster edges extended with the intercluster edge weight
 determineInterClusterWeight <- function(directedEdgesBetweenClusters,vizInterClusterEdges){
+    clusterID.sourceNode <- clusterID.targetNode <- weight <- avgWeight <- heaviestWeight <- NULL
+
   #Get heaviest weight
   directedEdgesBetweenClusters %>% group_by(clusterID.sourceNode,clusterID.targetNode) %>% arrange(-weight) %>% slice(1) %>%
     select(clusterID.sourceNode,clusterID.targetNode,weight) %>% rename("heaviestWeight" = weight) %>%
@@ -580,6 +593,9 @@ determineInterClusterWeight <- function(directedEdgesBetweenClusters,vizInterClu
 #@param vizClusterNodesToClusterIDs link between clusterID and the node ID of the cluster in the visualization
 #@return dataframe that contains all normal edges incl edge from a regular node to cluster + weight and collabType
 handleOutClusterEdgesRegular <- function(vizEdges,edges,vizClusterNodesToClusterIDs){
+    clusterID.sourceNode <- clusterID.targetNode <- sourceNodeID <- targetNodeID <-
+        regularNodeID <- label <- clusterNodeWeight <- type <- NULL
+
   #Handle edges where only one side is a cluster, the other is clusterID NA
   edges %>% filter((is.na(clusterID.sourceNode) & !is.na(clusterID.targetNode))|(is.na(clusterID.targetNode) & !is.na(clusterID.sourceNode))) %>%
     mutate("regularNodeID" = ifelse(is.na(clusterID.sourceNode), sourceNodeID,targetNodeID),
@@ -614,6 +630,8 @@ handleOutClusterEdgesRegular <- function(vizEdges,edges,vizClusterNodesToCluster
 
 #Function that determines the weight of the new edge that connects a regular node to a cluster
 determineRegularNodeToClusterEdgeWeight <- function(edgesBetweenRegularAndCluster,vizRegularToClusterEdges){
+    regularNodeID <- clusterID <- weight <- avgWeight <- heaviestWeight <- NULL
+
   #Determine the new edge weight
   #Group the edges that go from this regular node the the same cluster
   #Search for these edges the heaviest edge and the average edge weight
@@ -632,6 +650,7 @@ determineRegularNodeToClusterEdgeWeight <- function(edgesBetweenRegularAndCluste
 #Function that calculates the collaboration type of the new edge between a regular node and a cluster node
 #Returns dataframe with added collaboration type for the cluster edges
 determineCollabTypeRegularNodeToClusterEdge <- function(edgesBetweenRegularAndCluster,vizRegularToClusterEdges){
+    regularNodeID <- clusterID <- collabType <- numberPADP <- numberPP <- numberDP <- NULL
 
   edgesBetweenRegularAndCluster %>% group_by(regularNodeID,clusterID) %>%
     summarize("numberPP" = sum(collabType=="pair programming"),

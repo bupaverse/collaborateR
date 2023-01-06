@@ -53,6 +53,7 @@ writeNodesCSV <- function(nodes, filename, anonymization){
 #@param filename: the name of the CSV file to write to
 writeEdgesCSV <- function(edges, filename){
 
+
   #rewrite the columnnames
   edgesFrame <- setNames(edges, c("Source","Target","Weight","Type", "CollaborationType"))
   write.csv(edgesFrame,filename, row.names = FALSE)

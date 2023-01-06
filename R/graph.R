@@ -135,8 +135,10 @@ calculateNumberOfMonthsInExistence <- function(log){
 
 #Function that sets the importance value of all files to 1
 doNotUseFileImportance <- function(log){
-  log %>% select(fileId) %>% unique() -> fileIDs
-  fileImportance <- data.frame("fileId" = fileIDs, "importance" = 1)
+    fileId <- NULL
 
-  fileImportance
+    log %>% select(fileId) %>% unique() -> fileIDs
+    fileImportance <- data.frame("fileId" = fileIDs, "importance" = 1)
+
+    fileImportance
 }
